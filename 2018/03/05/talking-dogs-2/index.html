@@ -18,7 +18,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="talking dogs 1.5"/>
+        <meta property="og:title" content="talking dogs 2"/>
     
 
     <!--Open Graph Description-->
@@ -40,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>talking dogs 1.5 - CheerUpCharm☆</title>
+    <title>talking dogs 2 - CheerUpCharm☆</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -150,7 +150,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>talking dogs 1.5</h1>
+                    <h1>talking dogs 2</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -200,7 +200,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;data&quot;: &#123;</span><br><span class="line">    &quot;translations&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;translatedText&quot;: &quot;Hallo Welt&quot;,</span><br><span class="line">        &quot;detectedSourceLanguage&quot;: &quot;en&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;translatedText&quot;: &quot;Mein Name ist Jeff&quot;,</span><br><span class="line">        &quot;detectedSourceLanguage&quot;: &quot;en&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The two queries in the POST request data are returned (in the order originally present in the request) in the <code>translations</code> array with, of course, the translation for the queried string as well as (if not initially specified in the request) the source language discovered through automatic detection.</p>
 <p>Very easy. What’s important to understand about this translation and how to use it is, however, two things: firstly, that to be able to use it effectively, the user needs to know the <strong>ISO 639-1 language code</strong>, as well as the two different <strong>translation models</strong> (not specified in this particular sample code, but important) that Google’s API uses for its translations.</p>
-<p>The ISO 639-1 langauge code is pretty self explanatory; to be able for the API to understand what langauge it should be translating to (and from, if the specificity is important), the user must provide this. Wikipedia has a <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="noopener">handy list of language codes</a>.</p>
+<p>The ISO 639-1 language code is pretty self explanatory; to be able for the API to understand what langauge it should be translating to (and from, if the specificity is important), the user must provide this. Wikipedia has a <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="noopener">handy list of language codes</a>.</p>
 <p>The translation models are a bit more complicated and different translations will be produced depending on which one is used. There are two to know, <strong>Phrase-Based Machine Translation (PBMT)</strong> and <strong>Neural Machine Translation (NMT)</strong>.</p>
 <h2 id="Phrase-Based-Machine-Translation"><a href="#Phrase-Based-Machine-Translation" class="headerlink" title="Phrase-Based Machine Translation"></a><strong>Phrase-Based Machine Translation</strong></h2><p>is a type of statistical machine translation where it guesses the <em>probable</em> translation for sets of phrases based on a model created from parallel, pre-translated texts; it translates based on the likelihood of a particular meaning in that context, obtained from the massive amounts of data used to build the model. This is the model traditionally used in machine translation, developed and studied over the past several decades and, perhaps to the chagrin of pretty much anyone who’s tried using a machine translator, typically results in higly literal translations that don’t often make a lot of sense. It has been suggested, however, that PBMT functions well when dealing with highly technical texts, where other aspects of language (context, tone, etc) can be safely ignored.</p>
 <h2 id="Neural-Machine-Translation"><a href="#Neural-Machine-Translation" class="headerlink" title="Neural Machine Translation"></a><strong>Neural Machine Translation</strong></h2><p>is a much more recent, emerging technology that Google has started using for its translations - when the translation model is not specified, such as in the sample code above, Google will by default attempt to translate using NMT. It is modelled after neural networks in the human brain using <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="noopener">deep learning</a> techniques in order to attempt to emulate the way humans learn, and uses algorithms to teach itself language rules. Because of this, NMT typically provides higher-quality translations at a much faster speed compared to PBMT.</p>
